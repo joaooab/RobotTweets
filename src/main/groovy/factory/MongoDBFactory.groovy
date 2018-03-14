@@ -1,13 +1,8 @@
-package model
+package factory
 
-import com.mongodb.BasicDBObject
-import com.mongodb.DB
-import com.mongodb.DBCollection
-import com.mongodb.Mongo
-import com.mongodb.MongoClient
-import com.mongodb.MongoException
+import com.mongodb.*
 
-class ConectaMongoFactory {
+class MongoDBFactory {
 
     private static DB banco
     private static DBCollection collection
@@ -25,12 +20,12 @@ class ConectaMongoFactory {
             return collection
         } catch (UnknownHostException | MongoException ex) {
             System.out.println("MongoException :" + ex.getMessage())
+            return null
         }
     }
 
     static void printaLogs() {
         Calendar calendar = Calendar.getInstance()
-        calendar.getTime()
         println("[${calendar.getTime()}] DB: ${collection.getDB()} - Collection: ${collection.getCollection()}")
     }
 }

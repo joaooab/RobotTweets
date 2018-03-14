@@ -1,12 +1,12 @@
 import com.mongodb.BasicDBObject
 import com.mongodb.DBCollection
-import model.ConectaMongoFactory
+import factory.MongoDBFactory
 import twitter4j.*
 import twitter4j.auth.AccessToken
 
 class TesteTweets {
 
-    static private DBCollection collection = ConectaMongoFactory.getInstance()
+    static private DBCollection collection = MongoDBFactory.getInstance()
 
     static void main(String[] args) {
         Twitter twitter = TwitterFactory.getSingleton()

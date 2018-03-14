@@ -1,14 +1,14 @@
 import com.mongodb.BasicDBObject
 import com.mongodb.DBCollection
-import model.ConectaMongoFactory
+import factory.MongoDBFactory
 import twitter4j.*
 import twitter4j.conf.ConfigurationBuilder
-import utils.CredencialsFactory
+import factory.CredentialsFactory
 
-class TestsTwitterSteamTweets {
+class TesteTwitterSteamTweets {
 
-    static private ConfigurationBuilder cb = CredencialsFactory.getInstance()
-    static private DBCollection collection = ConectaMongoFactory.getInstance()
+    static private ConfigurationBuilder cb = CredentialsFactory.getInstance()
+    static private DBCollection collection = MongoDBFactory.getInstance()
 
    static private capturaTweets() {
         TwitterStream twitterStream = new TwitterStreamFactory(cb.build()).getInstance()

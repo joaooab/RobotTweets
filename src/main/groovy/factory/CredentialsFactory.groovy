@@ -1,9 +1,9 @@
-package utils
+package factory
 
 import twitter4j.TwitterStream
 import twitter4j.auth.AccessToken
 
-class CredencialsFactory {
+class CredentialsFactory {
 
     static void getCredencials(TwitterStream twitterStream){
         twitterStream.setOAuthConsumer("twdP1ydVc4mFV19ZqJHqLOGCl","XbNrPYUC1Y1gcz5alo1ghxX48VWbXPRTMrdtpTAsxd3ahOxtQO")

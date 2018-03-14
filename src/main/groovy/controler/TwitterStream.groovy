@@ -1,8 +1,8 @@
 package controler
 
+import factory.CredentialsFactory
+import factory.FilterQueryFactory
 import twitter4j.*
-import utils.CredencialsFactory
-import utils.FilterQueryFactory
 
 class TwitterStream {
 
@@ -18,8 +18,9 @@ class TwitterStream {
                 parametros.put("text", status.getText())
                 parametros.put("url", status.getURLEntities())
                 parametros.put("hashtag", status.getHashtagEntities())
+                parametros.put("date", status.getCreatedAt())
 
-                print(parametros)
+                println(parametros)
 
 //                TweetsDao.salvar(parametros)
             }
@@ -50,7 +51,7 @@ class TwitterStream {
             }
         }
 
-        CredencialsFactory.getCredencials(twitterStream)
+        CredentialsFactory.getCredencials(twitterStream)
         FilterQuery filterQuery = FilterQueryFactory.getInstance()
 
         twitterStream.addListener(listener)
