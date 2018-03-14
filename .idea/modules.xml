@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RobotTweets.iml" filepath="$PROJECT_DIR$/RobotTweets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RobotTweets_main.iml" filepath="$PROJECT_DIR$/.idea/modules/RobotTweets_main.iml" group="RobotTweets" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RobotTweets_test.iml" filepath="$PROJECT_DIR$/.idea/modules/RobotTweets_test.iml" group="RobotTweets" />
+    </modules>
+  </component>
+</project>
