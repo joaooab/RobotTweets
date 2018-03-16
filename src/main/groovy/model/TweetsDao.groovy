@@ -19,14 +19,9 @@ class TweetsDao {
 
         try {
             collection.insert(objetoDao)
-            printaLogs(parametros)
         } catch (Exception e) {
             println("Erro: conexão ${e.getMessage()}")
         }
-    }
-
-    static void printaLogs(Map<String, Object> parametros) {
-        println("@ ${parametros.user}: ${parametros.text}")
     }
 
 }
