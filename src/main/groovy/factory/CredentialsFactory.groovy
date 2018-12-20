@@ -3,6 +3,7 @@ package factory
 import twitter4j.TwitterStream
 import twitter4j.auth.AccessToken
 
+//urlAPI: https://apps.twitter.com/
 class CredentialsFactory {
 
     static void getCredencials(TwitterStream twitterStream){

@@ -12,7 +12,7 @@ class MongoDBFactory {
             Mongo mongoCliente = new MongoClient("127.0.0.1")
             banco = mongoCliente.getDB("twDB")
 
-            collection = banco.getCollection("tweets")
+            collection = banco.getCollection("tweets_pos_eleicao")
             BasicDBObject index = new BasicDBObject("tweet_ID", 1)
             collection.ensureIndex(index, new BasicDBObject("unique", true))
 

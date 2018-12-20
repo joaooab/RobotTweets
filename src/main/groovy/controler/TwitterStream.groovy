@@ -2,7 +2,7 @@ package controler
 
 import factory.CredentialsFactory
 import factory.FilterQueryFactory
-import model.TweetsDao
+import model.Tweets
 import twitter4j.*
 
 class TwitterStream {
@@ -13,18 +13,19 @@ class TwitterStream {
         StatusListener listener = new StatusListener() {
             @Override
             void onStatus(Status status) {
-                //TODO transformar mapa em DTO
                 Map<String, Object> parametros = new HashMap<>()
-                parametros.put("tweet_ID", status.getId())
-                parametros.put("user", status.getUser().getScreenName())
-                parametros.put("text", status.getText())
-                parametros.put("url", status.getURLEntities())
-                parametros.put("hashtag", status.getHashtagEntities().toString())
-                parametros.put("date", status.getCreatedAt())
+                if (!status.isRetweet()) {
+                    parametros.put("tweet_ID", status.getId())
+//                    parametros.put("user", status.getUser().getScreenName())
+                    parametros.put("text", status.getText())
+//                    parametros.put("location", status.getUser().getLocation())
+//                    parametros.put("url", status.getURLEntities())
+//                    parametros.put("hashtag", status.getHashtagEntities().toString())
+//                    parametros.put("date", status.getCreatedAt())
+                    println(parametros)
 
-                println(parametros)
-
-                TweetsDao.salvar(parametros)
+                    Tweets.salvar(parametros)
+                }
             }
 
             @Override

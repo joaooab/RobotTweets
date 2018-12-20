@@ -7,7 +7,7 @@ class FilterQueryFactory {
     static FilterQuery filterQuery = new FilterQuery()
 
     static FilterQuery getInstance() {
-        final String[] keyword = ["bolsonaro2018", "lula2018"]
+        final String[] keyword = ["bolsonaro", "haddad", "elenao", "elesim"]
         final String language = "pt"
 
         filterQuery.language(language)
